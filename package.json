@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.2"
+  },
+  "name": "simplone",
+  "description": "A new Flutter project.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run-server": "json-server --host 192.168.9.32 db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idrissAitHaddou/Simplone-Mobile-with-Flutter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idrissAitHaddou/Simplone-Mobile-with-Flutter/issues"
+  },
+  "homepage": "https://github.com/idrissAitHaddou/Simplone-Mobile-with-Flutter#readme"
+}
