@@ -154,7 +154,8 @@ class _DashboardState extends State<Dashboard> {
                   SizedBox(
                     height: 13,
                   ),
-                  Column(children: briefWidgets
+                  Column(
+                    children: briefWidgets
                       // Container(
                       //   padding: EdgeInsets.all(17),
                       //   decoration: BoxDecoration(
