@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:test/pages/Breif.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -38,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset("assets/images/flutter.png",
+                            child: Image.asset(brief["image"],
                                 width: 50, height: 50, fit: BoxFit.cover),
                           ),
                           Container(
@@ -46,10 +47,10 @@ class _DashboardState extends State<Dashboard> {
                             child: Column(
                               children: [
                                 Text(
-                                  "Application Mobile SimplonLine",
+                                brief["title"] ,
                                   style: TextStyle(fontWeight: FontWeight.w700),
                                 ),
-                                Text("Application Mobile SimplonLine"),
+                                Text(brief["title"]),
                               ],
                             ),
                           ),
@@ -57,7 +58,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       ElevatedButton(
                         onPressed: () =>
-                            {Navigator.pushNamed(context, '/breif')},
+                            { Navigator.push(context, MaterialPageRoute(builder: (context) => Breif(brief))) },
                         // ignore: sort_child_properties_last
                         child: Icon(Icons.remove_red_eye_sharp,
                             color: Colors.blue),
@@ -73,7 +74,7 @@ class _DashboardState extends State<Dashboard> {
                 SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("03-02-2023"), Text("Touailab Ilyass")],
+                  children: [Text(brief["created"]), Text(brief["former"])],
                 ),
               ],
             ),
@@ -156,435 +157,11 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Column(
                     children: briefWidgets
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/flutter.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/spring.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/angular.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/react.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/java.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
-                      // Container(
-                      //   padding: EdgeInsets.all(17),
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(
-                      //         width: 2,
-                      //         color: Color.fromARGB(255, 161, 211, 220)),
-                      //     borderRadius: BorderRadius.all(Radius.circular(5)),
-                      //   ),
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //           crossAxisAlignment: CrossAxisAlignment.start,
-                      //           children: [
-                      //             Row(
-                      //               children: [
-                      //                 ClipRRect(
-                      //                   borderRadius: BorderRadius.circular(8.0),
-                      //                   child: Image.asset(
-                      //                       "assets/images/uml.png",
-                      //                       width: 50,
-                      //                       height: 50,
-                      //                       fit: BoxFit.cover),
-                      //                 ),
-                      //                 Container(
-                      //                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      //                   child: Column(
-                      //                     children: [
-                      //                       Text(
-                      //                         "Application Mobile SimplonLine",
-                      //                         style: TextStyle(
-                      //                             fontWeight: FontWeight.w700),
-                      //                       ),
-                      //                       Text(
-                      //                           "Application Mobile SimplonLine"),
-                      //                     ],
-                      //                   ),
-                      //                 ),
-                      //               ],
-                      //             ),
-                      //             ElevatedButton(
-                      //               onPressed: () =>
-                      //                   {Navigator.pushNamed(context, '/breif')},
-                      //               // ignore: sort_child_properties_last
-                      //               child: Icon(Icons.remove_red_eye_sharp,
-                      //                   color: Colors.blue),
-                      //               style: ButtonStyle(
-                      //                   elevation: MaterialStateProperty.all(0),
-                      //                   backgroundColor:
-                      //                       MaterialStateProperty.all(
-                      //                           Colors.white),
-                      //                   padding: MaterialStateProperty.all(
-                      //                     EdgeInsets.symmetric(
-                      //                         horizontal: 1, vertical: 1),
-                      //                   )),
-                      //             ),
-                      //           ]),
-                      //       SizedBox(height: 12),
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Text("03-02-2023"),
-                      //           Text("Touailab Ilyass")
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 8,
-                      // ),
                       ),
                 ],
               ),
             )));
   }
 }
+
+

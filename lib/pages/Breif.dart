@@ -1,11 +1,14 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, override_on_non_overriding_member, library_private_types_in_public_api, unused_import, avoid_print, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Breif extends StatelessWidget {
-  const Breif({super.key});
-
-  @override
+  final Map<String, dynamic> breif;
+  
+  const Breif(this.breif);
+  
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -38,18 +41,19 @@ class Breif extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
-                            child: Image.asset("assets/images/flutter.png",
+                            child: Image.asset(breif["image"],
                                 width: 50, height: 50, fit: BoxFit.cover),
                           ),
                           Container(
                             margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                             child: Column(
+                              // ignore: prefer_const_literals_to_create_immutables
                               children: [
                                 Text(
-                                  "Application Mobile SimplonLine",
+                                  breif["title"],
                                   style: TextStyle(fontWeight: FontWeight.w700),
                                 ),
-                                Text("Application Mobile SimplonLine"),
+                                Text(breif["title"]),
                               ],
                             ),
                           ),
@@ -59,25 +63,7 @@ class Breif extends StatelessWidget {
                 SizedBox(height: 18),
                 Text("Contexte du projet", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
                 SizedBox(height: 12),
-                Text("Un client souhaite créer une application web d'adoption d'animaux (oiseau, chien, chat) pour les personnes qui ont des engagements et ne peuvent pas porter sans leur animal de compagnie.Le client souhaite une application de gestion de l'adaptation des animaux pour un certain nombre de jours Chaque personne est caractérisée par un identifiant, login, mot de passe, adresse, email, numéro de téléphone, nombre d'animaux à adopter. Chaque animal est caractérisé par le type, l'âge, le nombre de jours, la description de l'adoption et des photos. Chaque personne souhaitant faire une publication d'adoption ou souhaite adopter doit avoir un profil Pour juste voir les postes des animaux ne nécessite pas de compte Pour ajouter une offre d'adoption le propriétaire doit fournir un titre pour cette publication, une description, la ville, le type, le nombre de jours, des images et un prix Le client veut ajouter une recherche sur les personnes les plus actives La publication doit avoir la possibilité d'ajouter des commentaires et des réponses."),
-                SizedBox(height: 18),
-                Text("Travail demandé", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-                SizedBox(height: 12),
-                Text("à partir de votre backend du projet réalisé lors du brief précèdent ( voir ressources) ; réaliser une application mobile en Flutter qui va permettre de: Authentification.Lister toutes les offres."),
-                SizedBox(height: 18),
-                Text("Modalités pédagogiques", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-                SizedBox(height: 12),
-                Text("- Appliquer les bonnes pratique du Code"),
-                Text("- Une application optimisée pour minimiser les ressources matériels"),
-                Text("- Une bonne expérience utilisateur"),
-                SizedBox(height: 18),
-                Text("Modalités d'évaluation", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-                SizedBox(height: 12),
-                Text("Code exécutable avec explication de la solution"),
-                SizedBox(height: 18),
-                Text("Livrables", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),),
-                SizedBox(height: 12),
-                Text("lien github de votre application"),
+                Text(breif["description"]),
               ],
             ),
           ),

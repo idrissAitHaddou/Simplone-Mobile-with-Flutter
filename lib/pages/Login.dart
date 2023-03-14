@@ -1,9 +1,32 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, sort_child_properties_last, unused_field, prefer_final_fields, use_build_context_synchronously, prefer_interpolation_to_compose_strings
+
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _Login();
+
+}
+
+class _Login extends State<Login> {
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+    signIn(String email,String password) async{
+        final response = await http.get(Uri.parse("http://192.168.9.32:3000/users?email="+email+"&password="+password));
+        if(response.statusCode == 200 && !(jsonDecode(response.body).isEmpty)){
+          Navigator.pushNamed(context, "/dashboard");
+        }
+        else{ return;}
+    }
+
   @override
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -40,7 +63,8 @@ class Login extends StatelessWidget {
                     Container(
                       width: 270,
                       height: 50,
-                      child: const TextField(
+                      child:  TextField(
+                        controller: _emailController,
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue),
@@ -59,7 +83,8 @@ class Login extends StatelessWidget {
                     Container(
                       width: 270,
                       height: 50,
-                      child: const TextField(
+                      child: TextField(
+                        controller: _passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -79,7 +104,9 @@ class Login extends StatelessWidget {
                     SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: () => {
-                        Navigator.pushNamed(context, "/dashboard")
+                         if( _emailController.text.isNotEmpty || _passwordController.text.isNotEmpty){
+                           signIn(_emailController.text,_passwordController.text)
+                          } 
                       },
                       child: Text("Sign in",
                           style: TextStyle(

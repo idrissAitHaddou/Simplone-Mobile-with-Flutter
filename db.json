@@ -2,21 +2,69 @@
     "data": [
         {
             "id": 1,
-            "image": "flutter.png",
-            "title": "Application Mobile SimplonLine",
-            "description": "",
+            "image": "assets/images/flutter.png",
+            "title": "SimplonLine",
+            "description": "SimplonLine \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
             "created": "03-02-2023",
             "former": "Touailab Ilyass"
 
         },
         {
             "id": 2,
-            "image": "flutter.png",
-            "title": "Application Mobile SimplonLine",
-            "description": "",
-            "created": "03-02-2023",
+            "image": "assets/images/angular.png",
+            "title": "My Pet",
+            "description": "My Pet \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
+            "created": "13-01-2023",
             "former": "Touailab Ilyass"
 
+        },
+        {
+            "id": 3,
+            "image": "assets/images/java.png",
+            "title": "My Pack",
+            "description": "My Pack \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
+            "created": "02-12-2022",
+            "former": "Touailab Ilyass"
+
+        },
+        {
+            "id": 4,
+            "image": "assets/images/react.png",
+            "title": "Livraison",
+            "description": "Livraison \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
+            "created": "12-11-2022",
+            "former": "Touailab Ilyass"
+
+        },
+        {
+            "id": 5,
+            "image": "assets/images/uml.png",
+            "title": "Simplone",
+            "description": "Simplone \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
+            "created": "05-01-2023",
+            "former": "Touailab Ilyass"
+
+        },
+        {
+            "id": 6,
+            "image": "assets/images/spring.png",
+            "title": "Discord",
+            "description": "Discord \n Contexte du projet \n La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences) \n Travail demandé \n Après la réalisation de la première partie frontend, ajouter la partie backend en DART qui permettra la communication avec une API externe pour récupérer les données (brief, compétences, apprenants, comptes) \n Ajouter un fichier d'organisation de votre projet (Trello/ Jira)",
+            "created": "03-03-2023",
+            "former": "Touailab Ilyass"
+
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "email": "idriss@gmail.com",
+            "password": "123"
+        },
+        {
+            "id": 2,
+            "email": "ali@gmail.com",
+            "password": "123"
         }
     ]
 }
